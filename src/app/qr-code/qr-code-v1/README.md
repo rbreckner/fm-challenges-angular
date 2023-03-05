@@ -24,7 +24,7 @@ I used Figma to get dimensions and properties from the provided challenge screen
 
 ### Built with
 
-- Angular just for convinient project
+- Angular just for convenient project
 - basic html & css
 - display:flex + align-self: center for vertical centering
 
@@ -33,7 +33,7 @@ I used Figma to get dimensions and properties from the provided challenge screen
 
 Stumbled upon [margin collapse](https://www.joshwcomeau.com/css/rules-of-margin-collapse/). I ran into this problem several times at work, not really questioning it then. 
 
-Need to learn when to use Padding vs Margin.
+Need to learn when to use padding vs margin.
 
 ### Continued development
 
