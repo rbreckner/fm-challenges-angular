@@ -26,14 +26,28 @@ I used Figma to get dimensions and properties from the provided challenge screen
 
 - Angular just for convenient project
 - basic html & css
-- display:flex + align-self: center for vertical centering
+- display:flex ~~align-self: center~~ + margin:auto for vertical centering
+  
 
 
 ### What I learned
 
-Stumbled upon [margin collapse](https://www.joshwcomeau.com/css/rules-of-margin-collapse/). I ran into this problem several times at work, not really questioning it then. 
+- Stumbled upon [margin collapse](https://www.joshwcomeau.com/css/rules-of-margin-collapse/). I ran into this problem several times at work, not really questioning it then. 
 
-Need to learn when to use padding vs margin.
+- Need to learn when to use padding vs margin.
+
+- Finally an easy solution for centering on x & y!
+
+  [flexbox & auto-margin](https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/)
+  ```css
+  .parent {
+  display: flex;
+  } 
+  .center {
+    margin: auto;
+  }
+  ```
+- [img tags can add invisible spacings](https://stackoverflow.com/a/1383220)
 
 ### Continued development
 
