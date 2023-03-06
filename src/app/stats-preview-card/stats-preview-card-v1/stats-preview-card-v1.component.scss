@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+* {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.debug {
+  background-color: hotpink;
+}
+
+.wrapper {
+  height: 100dvh;
+  background-color: #0A0C1C;
+
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+
+  display: flex;
+
+  --color-highlight: #AB5CDB;
+}
+
+.filtered {
+  background: var(--color-highlight);
+  position: relative;
+}
+
+.filtered__img {
+  display: block;
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+}
+
+.highlight {
+  color: var(--color-highlight);
+}
+
+.card {
+  max-width: 1110px;
+  margin: auto;
+  display: flex;
+  overflow: hidden;
+
+  background-color: #1B1937;
+  color: white;
+  font-style: normal;
+  box-shadow: 0px 20px 20px -10px rgba(23, 25, 41, 0.203087);
+  border-radius: 8px;
+}
+
+.card__content {
+  padding: 72px 72px 58px;
+  display: grid;
+}
+
+
+.card__header {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+}
+
+.card__text {
+  //line-height: 25px;
+  opacity: .75;
+  margin-right: 72px; // i hate this
+}
+
+.card__stats {
+  align-self: end;
+
+  display: flex;
+  justify-content: space-between;
+  margin-right: 72px;
+}
+
+.card__media {
+  object-fit: cover;
+}
+
+.stat__value {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stat__title {
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: .6;
+}
