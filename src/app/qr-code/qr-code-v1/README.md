@@ -12,7 +12,7 @@ Angular is only used for project convenience, all relevant code is in
 <img src="./screenshot.png" width="400" />
 
 ### Figma Reversed
-<img src="./redlines.png" width="400" />
+<img src="./redlines.png" width="400" /> 
 
 ### Links
 
