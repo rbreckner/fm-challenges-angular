@@ -41,7 +41,7 @@ I used Figma to get dimensions and properties from the provided challenge screen
   [flexbox & auto-margin](https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/)
   ```css
   .parent {
-  display: flex;
+    display: flex;
   } 
   .center {
     margin: auto;
