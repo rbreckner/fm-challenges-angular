@@ -4,6 +4,10 @@ This is a solution to
 the [Stats preview card component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62).
 Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
+Angular is only used for project convenience, all relevant code is in
+- stats-preview-card-v1.component.html
+- stats-preview-card-v1.component.scss
+
 ### The challenge
 
 Users should be able to:
@@ -15,7 +19,7 @@ Users should be able to:
 
 [//]: # (- Solution URL: [Add solution URL here]&#40;https://your-solution-url.com&#41;)
 
-- Live Site URL: [https://rb-fem.netlify.app/stats-preview/v1](https://rb-fem.netlify.app/stats-preview/v1)
+- Live Site URL: [https://rb-fem.netlify.app/stats-preview-card/v1](https://rb-fem.netlify.app/stats-preview-card/v1)
 
 ## My process
 
