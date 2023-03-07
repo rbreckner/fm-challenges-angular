@@ -1,4 +1,9 @@
-<div class="wrapper">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+</style>
+
+<div class="wrapper" [class.debug]="debug">
 
   <div class="card">
     <div class="card__content">
@@ -25,8 +30,11 @@
       </div>
     </div>
     <div class="card__media filtered">
-      <img class="filtered__img" src="assets/image-header-desktop.jpg">
+      <img class="filtered__img desktop" src="assets/stats-preview/image-header-desktop.jpg">
+      <img class="filtered__img mobile" src="assets/stats-preview/image-header-mobile.jpg">
     </div>
   </div>
 
+  <button class="toggle-debug" (click)="debug = !debug">debug</button>
 </div>
+
