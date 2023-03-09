@@ -1,0 +1,44 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+</style>
+
+<main class="wrapper text-body">
+  <header class="balance flex text-white">
+    <div>
+      <div>My balance</div>
+      <div class="text-heading-l">$921.48</div>
+    </div>
+    <div>
+      <svg width="72" height="48" viewBox="0 0 72 48" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" fill-rule="evenodd">
+          <circle fill="#382314" cx="48" cy="24" r="24"/>
+          <circle stroke="#FFF" stroke-width="2" cx="24" cy="24" r="23"/>
+        </g>
+      </svg>
+    </div>
+  </header>
+  <section class="spending text-dark">
+    <h1 class="text-heading-l">Spending - Last 7 days</h1>
+    <div class="spending__chart chart">
+      <div *ngFor="let item of data"
+           class="chart__item">
+        <div class="chart__tooltip">${{item.amount}}</div>
+        <div class="chart__bar"
+             [style.height]="item.amount / maxAmount * 100+ '%'">
+        </div>
+        <div class="text-mini-caption text-light">{{item.day}}</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="flex spending__footer">
+      <div>
+        <div class="text-light">Total this month</div>
+        <h2 class="text-heading-xl">$478.33</h2>
+      </div>
+      <div>
+        <div class="text-body-bold">+2.4%</div>
+        <div class="text-light">+2.4%</div>
+      </div>
+    </div>
+  </section>
+</main>
