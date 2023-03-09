@@ -1,0 +1,234 @@
+@use 'sass:map';
+@import 'variables';
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.transparent-50 {
+  opacity: .5;
+}
+
+:host {
+  background-color: $color-very-light-blue;
+
+  .card {
+    background-color: $color-white;
+
+    &__header {
+      //flex: 1 100%;
+      text-align: center;
+      background-image: $color-gradient-1;
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+
+      padding: 24px 57px 40px;
+    }
+
+    &__title {
+      @include text-style-heading-m;
+      color: $color-light-blue;
+      margin-bottom: 24px
+    }
+
+    &__content {
+      margin-bottom: 24px;
+    }
+
+    &__evaluation {
+      @include text-style-heading-l;
+      color: $color-white;
+      margin-bottom: 8px;
+    }
+
+    &__description {
+      @include text-style-body;
+      color: $color-light-blue;
+    }
+
+
+
+    /**
+    Summary
+    */
+
+    &__summary {
+      padding: 24px 30px 30px
+    }
+
+    &__subtitle {
+      @include text-style-heading-m;
+      color: $color-dark-navy;
+      margin-bottom: 24px;
+    }
+
+    &__action {
+      @include text-style-body-bold-desktop; // that is stupid currently
+      margin-top: 8px;
+      background-color: $color-dark-navy;
+      color: $color-white;
+      width: 100%;
+      text-align: center;
+      padding: 16px 0;
+      border-radius: 50px;
+      cursor: pointer;
+      border: 2px solid transparent;
+
+      transition: background 500ms ease-out;
+
+      &:hover {
+        background-image: $color-gradient-1;
+      }
+
+      &:active {
+        border-color: rgb(0 255 67);
+      }
+    }
+  }
+
+
+
+  .circle {
+    background-image: $color-gradient-2;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    width: 140px; // todo make this dynamic!
+    margin-left: auto;
+    margin-right: auto;
+    padding: 24px 0;
+
+    &__title {
+      @include text-style-heading-xl;
+      color: $color-white;
+    }
+
+    &__subtitle {
+      @include text-style-body-bold;
+      color: $color-light-blue;
+    }
+  }
+
+  .list {
+
+    &__item {
+      display: flex;
+      align-items: center;
+      padding: 17px 16px 18px 16px;
+      margin-bottom: 16px;
+      border-radius: 12px;
+
+      @include text-style-body;
+
+
+      @each $color in $colors {
+        &--#{$color} {
+          //background-color: $color-#{$color}-95-white;
+          background-color: map-get($color-map, $color + '-95-white');
+
+          .list__label {
+            color: map.get($color-map, $color);
+          }
+        }
+      }
+    }
+
+    &__icon {
+      margin-right: 12px;
+    }
+
+    &__label {
+      flex-grow: 1;
+    }
+
+    &__score {
+      color: $color-dark-navy;
+    }
+  }
+
+  // Debugger for spotting differences
+  &.debug {
+    background-image: url('/src/assets/results-summary/mobile-design.jpg');
+    background-position: center;
+
+    .card {
+      opacity: 50%;
+      mix-blend-mode: difference;
+    }
+  }
+
+  @media (min-width: 650px) {
+    height: 100dvh;
+    display: flex;
+    padding: 0 24px;
+
+    .card {
+      width: 736px;
+      margin: auto;
+      display: flex;
+      //border: 1px solid #979797
+      border-radius: 32px;
+      @include effect-box-shadow;
+
+      &__header {
+        max-width: 368px;
+        border-radius: 32px;
+        flex: 1 0;
+
+        padding: 38px 54px 46px;
+      }
+
+      &__title {
+        @include text-style-heading-m-desktop;
+        margin-bottom: 36px;
+      }
+
+      &__evaluation {
+        @include text-style-heading-l-desktop;
+      }
+
+      &__description {
+        @include text-style-body-desktop;
+      }
+
+      &__summary {
+        flex: 1 0;
+        padding: 38px 40px 40px;
+      }
+
+      &__subtitle {
+        @include text-style-heading-m-desktop;
+      }
+    }
+
+    .circle {
+      width: 200px;
+      padding-top: 55px;
+
+      &__title {
+        @include text-style-heading-xl-desktop;
+      }
+
+      &__subtitle {
+        @include text-style-body-bold-desktop;
+      }
+    }
+
+    .list {
+      margin-bottom: 30px;
+
+      &__item {
+        @include text-style-body-desktop;
+      }
+    }
+
+    &.debug {
+      background-image: url('/src/assets/results-summary/desktop-design.jpg');
+    }
+  }
+}
+
+
+
+
+

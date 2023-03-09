@@ -1,0 +1,36 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+</style>
+
+<main class="card">
+  <div class="card__header">
+    <h1 class="card__title">Your Result</h1>
+    <div class="card__content circle">
+      <div class="circle__title">76</div>
+      <div class="circle__subtitle">of 100</div>
+    </div>
+    <div class="card__evaluation">Great</div>
+    <p class="card__description">Your performance exceed 65% of the people conducting the test here!</p>
+  </div>
+  <div class="card__summary">
+    <h2 class="card__subtitle">Summary</h2>
+    <div class="list">
+      <div *ngFor="let item of data"
+           class="list__item list__item--{{item.color}}">
+        <img class="list__icon"
+             [src]="item.icon"
+             alt="reaction icon"/>
+        <div class="list__label">
+          {{item.category}}
+        </div>
+        <div class="list__score">
+          {{item.score}}
+          <span class="transparent-50">/ 100</span>
+        </div>
+      </div>
+    </div>
+    <button class="card__action">
+      Continue
+    </button>
+  </div>
+</main>

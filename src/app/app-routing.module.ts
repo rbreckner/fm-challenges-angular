@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {StatsPreviewCardV1Component} from "./stats-preview-card/stats-preview-card-v1/stats-preview-card-v1.component";
+import {ResultsSummaryV1Component} from "./results-summary/results-summary-v1/results-summary-v1.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'stats-preview-card/v1',
     component: StatsPreviewCardV1Component
+  },
+  {
+    path: 'results-summary/v1',
+    component: ResultsSummaryV1Component
   }
 ];
 
