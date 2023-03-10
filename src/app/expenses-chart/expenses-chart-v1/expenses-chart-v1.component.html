@@ -24,11 +24,15 @@
            class="chart__item"
            [class.chart__item--active]="selectedDay === item.day"
            (click)="dayClick(item.day)">
-        <div class="chart__bar"
-             [class.chart__bar--current]="item.day === currentDay"
-             [style.height.%]="item.amount / maxAmount * 100">
-          <div class="chart__tooltip">${{item.amount}}</div>
+
+        <div class="chart__bar-container">
+          <div class="chart__bar"
+               [class.chart__bar--current]="item.day === currentDay"
+               [style.height.%]="item.amount / maxAmount * 100">
+            <div class="chart__tooltip">${{item.amount}}</div>
+          </div>
         </div>
+
         <div class="text-mini-caption text-light">{{item.day}}</div>
       </div>
     </div>
@@ -38,7 +42,7 @@
         <div class="text-light">Total this month</div>
         <h2 class="text-heading-xl">$478.33</h2>
       </div>
-      <div class="text-right">
+      <div class="spending__change">
         <span class="text-body-bold">+2.4%</span>
         <div class="text-light">from last month</div>
       </div>
