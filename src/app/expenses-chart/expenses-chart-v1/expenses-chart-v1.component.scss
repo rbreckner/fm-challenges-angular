@@ -19,6 +19,10 @@ h1, h2 {
   text-transform: none;
 }
 
+.text-right {
+  text-align: right;
+}
+
 
 .text-body {
   @include text-base;
@@ -96,10 +100,12 @@ h1, h2 {
   --cyan: rgba(118, 181, 188, 1);
   --cyan-light: rgba(180, 224, 229, 1);
   --red: rgba(236, 117, 93, 1);
+  --red-light: rgba(225, 155, 134, 1);
 
   height: 100dvh;
   display: flex;
   background-color: var(--cream-bg);
+  padding: 0 16px;
 
   .wrapper {
     margin: auto;
@@ -131,25 +137,41 @@ h1, h2 {
 
 
   .chart {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
 
     &__item {
-      flex: 1;
+      position: relative;
       display: flex;
       flex-flow: column;
-      justify-content: end;
+      justify-content: flex-end;
 
       height: 200px;
-      margin: 9px;
+      margin: 6px;
       text-align: center;
 
       padding-top: 50px;
-      position: relative;
 
-      &:hover {
+      &:hover,
+      &--active {
+        z-index: 20;
+
         .chart__tooltip {
           opacity: 1;
         }
+
+        .chart__bar {
+          background-color: var(--red-light);
+
+          &--current {
+            background-color: var(--cyan-light);
+          }
+        }
+      }
+
+      @include for-desktop-up {
+        margin: 9px;
       }
     }
 
@@ -157,8 +179,9 @@ h1, h2 {
       opacity: 0;
 
       position: absolute;
-      top: 0;
-
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
 
       padding: 8px;
       background-color: var(--dark-brown);
@@ -172,15 +195,14 @@ h1, h2 {
       background-color: var(--red);
       @include item-border-radius;
       cursor: pointer;
+      position: relative;
 
-      &:hover {
-        background-color: var(--cyan-light);
+      &--current {
+        background-color: var(--cyan)
       }
     }
 
   }
-
-
 }
 
 .flex {

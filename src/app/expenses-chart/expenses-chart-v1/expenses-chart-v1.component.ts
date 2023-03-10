@@ -39,6 +39,8 @@ export class ExpensesChartV1Component {
   ];
 
   maxAmount = 0;
+  currentDay = 'wed'
+  selectedDay: string | null = '';
 
   constructor(private title: Title) {
     title.setTitle('expenses-chart');
@@ -49,7 +51,7 @@ export class ExpensesChartV1Component {
     })
   }
 
-  displayHeight(amount: number) {
-    return amount / this.maxAmount;
+  dayClick(day: string) {
+    this.selectedDay = this.selectedDay === day ? null : day;
   }
 }

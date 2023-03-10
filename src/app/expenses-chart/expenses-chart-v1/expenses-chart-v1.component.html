@@ -21,10 +21,13 @@
     <h1 class="text-heading-l">Spending - Last 7 days</h1>
     <div class="spending__chart chart">
       <div *ngFor="let item of data"
-           class="chart__item">
-        <div class="chart__tooltip">${{item.amount}}</div>
+           class="chart__item"
+           [class.chart__item--active]="selectedDay === item.day"
+           (click)="dayClick(item.day)">
         <div class="chart__bar"
-             [style.height]="item.amount / maxAmount * 100+ '%'">
+             [class.chart__bar--current]="item.day === currentDay"
+             [style.height.%]="item.amount / maxAmount * 100">
+          <div class="chart__tooltip">${{item.amount}}</div>
         </div>
         <div class="text-mini-caption text-light">{{item.day}}</div>
       </div>
@@ -35,9 +38,9 @@
         <div class="text-light">Total this month</div>
         <h2 class="text-heading-xl">$478.33</h2>
       </div>
-      <div>
-        <div class="text-body-bold">+2.4%</div>
-        <div class="text-light">+2.4%</div>
+      <div class="text-right">
+        <span class="text-body-bold">+2.4%</span>
+        <div class="text-light">from last month</div>
       </div>
     </div>
   </section>
