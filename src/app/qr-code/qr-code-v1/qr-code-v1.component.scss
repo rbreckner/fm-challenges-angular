@@ -49,15 +49,3 @@
   letter-spacing: 0.1875px;
   color: hsl(220, 15%, 55%);
 }
-
-
-// Debugger for spotting differences
-.wrapper.debug {
-  background-image: url('/assets/qr-code/desktop-design.jpg');
-  background-position: center;
-
-  .card {
-    opacity: 50%;
-    mix-blend-mode: difference;
-  }
-}

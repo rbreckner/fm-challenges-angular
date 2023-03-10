@@ -146,17 +146,6 @@
     }
   }
 
-  // Debugger for spotting differences
-  &.debug {
-    background-image: url('/src/assets/results-summary/mobile-design.jpg');
-    background-position: center;
-
-    .card {
-      opacity: 50%;
-      mix-blend-mode: difference;
-    }
-  }
-
   @media (min-width: 650px) {
     height: 100dvh;
     display: flex;
@@ -220,10 +209,6 @@
       &__item {
         @include text-style-body-desktop;
       }
-    }
-
-    &.debug {
-      background-image: url('/src/assets/results-summary/desktop-design.jpg');
     }
   }
 }

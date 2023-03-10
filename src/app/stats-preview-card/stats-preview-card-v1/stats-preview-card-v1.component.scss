@@ -111,19 +111,6 @@
   opacity: .6;
 }
 
-
-// Debugger for spotting differences
-.wrapper.debug {
-  background-image: url('/assets/stats-preview-card/desktop-design.jpg');
-  background-position: center;
-
-  .card {
-    opacity: 50%;
-    mix-blend-mode: difference;
-  }
-}
-
-
 @media (max-width: 700px) {
   .wrapper {
     margin: initial;
@@ -177,11 +164,6 @@
     &:not(:last-child) {
       margin-bottom: 24px;
     }
-  }
-
-  // Debugger for spotting differences
-  .wrapper.debug {
-    background-image: url('/assets/stats-preview-card/mobile-design.jpg');
   }
 }
 
