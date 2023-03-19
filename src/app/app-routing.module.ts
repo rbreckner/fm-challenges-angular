@@ -4,6 +4,7 @@ import {HomeComponent} from "./home/home.component";
 import {StatsPreviewCardV1Component} from "./stats-preview-card/stats-preview-card-v1/stats-preview-card-v1.component";
 import {ResultsSummaryV1Component} from "./results-summary/results-summary-v1/results-summary-v1.component";
 import {ExpensesChartV1Component} from './expenses-chart/expenses-chart-v1/expenses-chart-v1.component';
+import {TodoComponent} from './todo/todo.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'expenses-chart/v1',
     component: ExpensesChartV1Component
+  },
+  {
+    path: 'todo/v1',
+    component: TodoComponent
   }
 ];
 

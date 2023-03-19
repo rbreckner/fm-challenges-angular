@@ -1,0 +1,58 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+</style>
+
+<main class="todo">
+  <h1 class="todo__header">Todo</h1>
+
+
+  <div class="todo__list">
+    <div class="todo__item">
+      <div class="todo__circle"></div>
+      <input class="todo__input"
+             [(ngModel)]="newTodoTitle"
+             placeholder="Create a new todo..."
+             (keyup.enter)="createTodo()">
+    </div>
+  </div>
+
+
+  <div class="todo__list">
+    <div *ngFor="let todo of filteredTodos"
+         class="todo__item">
+      <div class="todo__circle todo__circle--{{todo.status}}"
+           (click)="toggleTodoStatus(todo)">
+        <div class="circle__cover"></div>
+        <svg *ngIf="todo.status === 'completed'" xmlns="http://www.w3.org/2000/svg" width="11" height="9">
+          <path fill="none" stroke="#FFF" stroke-width="2" d="M1 4.304L3.696 7l6-6"/>
+        </svg>
+      </div>
+      <input class="todo__input todo__input--{{todo.status}}" [value]="todo.title">
+    </div>
+
+    <div class="todo__item todo__item--footer">
+      <div class="todo__remaining">{{remaining}} items left</div>
+      <div>
+        <button class="todo__filter"
+                [class.todo__filter--active]="filter === 'all'"
+                (click)="filter = 'all'">
+          All
+        </button>
+        <button class="todo__filter"
+                [class.todo__filter--active]="filter === 'active'"
+                (click)="filter = 'active'">
+          Active
+        </button>
+        <button class="todo__filter"
+                [class.todo__filter--active]="filter === 'completed'"
+                (click)="filter = 'completed'">
+          Completed
+        </button>
+      </div>
+      <button class="todo__clear"
+              (click)="clearCompleted()">Clear Completed
+      </button>
+    </div>
+  </div>
+
+</main>

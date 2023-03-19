@@ -7,8 +7,6 @@ import {Title} from "@angular/platform-browser";
   styleUrls: ['./stats-preview-card-v1.component.scss']
 })
 export class StatsPreviewCardV1Component {
-  debug = false;
-
   constructor(private title: Title) {
     title.setTitle('stats-preview-card');
   }
