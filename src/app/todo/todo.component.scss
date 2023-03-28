@@ -220,6 +220,16 @@ button {
   flex-shrink: 0;
   cursor: pointer;
 
+  path {
+    color: var(--item-text-secondary-color);
+  }
+
+  &:hover {
+    path {
+      color: var(--item-text-hover-color)
+    }
+  }
+
   @include for-mobile {
     display: block;
   }
