@@ -12,7 +12,7 @@ export interface Todo {
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent {
-  @HostBinding('class') colorScheme: 'light' | 'dark' = 'light'
+  @HostBinding('class') colorScheme: 'light' | 'dark' = 'dark'
 
   todos: Todo[] = [
     {
@@ -117,5 +117,9 @@ export class TodoComponent {
 
   onDragStart(index: number) {
     this.draggingIndex = index;
+  }
+
+  removeTodo(index: number) {
+    this.todos.splice(index, 1);
   }
 }

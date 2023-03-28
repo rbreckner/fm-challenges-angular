@@ -218,6 +218,7 @@ button {
 .todo__cross {
   display: none;
   flex-shrink: 0;
+  cursor: pointer;
 
   @include for-mobile {
     display: block;
